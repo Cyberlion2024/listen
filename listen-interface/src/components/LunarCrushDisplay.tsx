@@ -337,32 +337,32 @@ export default function LunarCrushDisplay({ topicData }: LunarCrushDisplayProps)
 
   return (
     <div className="w-full">
-      <div className="flex border-b mb-6">
+      <div className="flex border-b mb-6 bg-gray-100 rounded-t-lg">
         <button
-          className={`px-6 py-3 font-medium ${
+          className={`px-6 py-4 font-bold text-lg ${
             activeTab === "overview" 
-              ? "border-b-2 border-indigo-500 text-black" 
-              : "text-black"
+              ? "border-b-2 border-indigo-500 bg-white text-black" 
+              : "text-black hover:bg-gray-200"
           }`}
           onClick={() => setActiveTab("overview")}
         >
           {i18n.t("Overview")}
         </button>
         <button
-          className={`px-6 py-3 font-medium ${
+          className={`px-6 py-4 font-bold text-lg ${
             activeTab === "posts" 
-              ? "border-b-2 border-indigo-500 text-black" 
-              : "text-black"
+              ? "border-b-2 border-indigo-500 bg-white text-black" 
+              : "text-black hover:bg-gray-200"
           }`}
           onClick={() => setActiveTab("posts")}
         >
           {i18n.t("Posts")} ({posts.length})
         </button>
         <button
-          className={`px-6 py-3 font-medium ${
+          className={`px-6 py-4 font-bold text-lg ${
             activeTab === "creators" 
-              ? "border-b-2 border-indigo-500 text-black" 
-              : "text-black"
+              ? "border-b-2 border-indigo-500 bg-white text-black" 
+              : "text-black hover:bg-gray-200"
           }`}
           onClick={() => setActiveTab("creators")}
         >
@@ -401,4 +401,4 @@ export default function LunarCrushDisplay({ topicData }: LunarCrushDisplayProps)
       )}
     </div>
   );
-} 
+}
