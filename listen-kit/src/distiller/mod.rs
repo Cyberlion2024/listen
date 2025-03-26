@@ -1,8 +1,8 @@
 use anyhow::Result;
 
 pub mod analyst;
-pub mod deepseek;
 pub mod gemini;
+pub mod deepseek;
 pub mod preambles;
 
 #[cfg(test)]
@@ -20,6 +20,32 @@ impl Analyst {
     ) -> Result<String, AnalystError> {
         if let Some(agent) = &self.twitter_agent {
             agent.analyze_twitter(query, response, intent).await
+        } else {
+            Err(AnalystError::UnsupportedOperation)
+        }
+    }
+
+    pub async fn analyze_lunarcrush(
+        &self,
+        query: &str,
+        response: &serde_json::Value,
+        intent: Option<String>,
+    ) -> Result<String, AnalystError> {
+        if let Some(agent) = &self.lunarcrush_agent {
+            agent.analyze_lunarcrush(query, response, intent).await
+        } else {
+            Err(AnalystError::UnsupportedOperation)
+        }
+    }
+
+    pub async fn analyze_faster100x(
+        &self,
+        query: &str,
+        response: &serde_json::Value,
+        intent: Option<String>,
+    ) -> Result<String, AnalystError> {
+        if let Some(agent) = &self.faster100x_agent {
+            agent.analyze_faster100x(query, response, intent).await
         } else {
             Err(AnalystError::UnsupportedOperation)
         }

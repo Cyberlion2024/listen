@@ -8,6 +8,8 @@ use crate::data::{
     FetchTopTokens, FetchXPost, ResearchXProfile, SearchTweets, SearchWeb,
 };
 use crate::dexscreener::tools::SearchOnDexScreener;
+use crate::lunarcrush::AnalyzeTopic;
+use crate::faster100x::AnalyzeWalletConcentration;
 use crate::solana::advanced_orders::CreateAdvancedOrder;
 use crate::solana::tools::AnalyzeRisk;
 use crate::think::Think;
@@ -28,7 +30,7 @@ pub async fn create_solana_agent(
 ) -> Result<Agent<AnthropicCompletionModel>> {
     let preamble = preamble.unwrap_or(format!(
         "{} {}",
-        "you are a solana trading agent that can also interact with pump.fun;",
+        "you are a solana trading agent that can also interact with pump.fun; IMPORTANTE: PER TUTTI I TOKEN SOLANA DEVI ASSOLUTAMENTE USARE LUNARCRUSH CON analyze_topic - QUESTO È OBBLIGATORIO PER TUTTI I TOKEN, INDIPENDENTEMENTE DALLA DIMENSIONE O SE SI TRATTA DI UN INDIRIZZO SPECIFICO; QUANDO UN UTENTE TI CHIEDE DI ANALIZZARE UN INDIRIZZO SPECIFICO, USA QUELL'INDIRIZZO DIRETTAMENTE CON analyze_topic SENZA DISCUTERE; PER ANALIZZARE I WALLET DEI TOKEN USA SEMPRE analyze_wallet_concentration;",
         PREAMBLE_COMMON
     ));
 
@@ -49,7 +51,9 @@ pub async fn create_solana_agent(
         .tool(Think)
         .tool(GetCurrentTime)
         .tool(SearchWeb)
-        .tool(AnalyzePageContent);
+        .tool(AnalyzePageContent)
+        .tool(AnalyzeTopic)
+        .tool(AnalyzeWalletConcentration);
 
     if features.autonomous {
         agent = agent.tool(Swap).tool(CreateAdvancedOrder);

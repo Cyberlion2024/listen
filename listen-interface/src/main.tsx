@@ -44,7 +44,7 @@ createRoot(document.getElementById("root")!).render(
     <MobileProvider>
       <I18nextProvider i18n={i18n}>
         <PrivyProvider
-          appId={"cm6c7ifqd00ar52m1qxfgbkkn"}
+          appId={"cm89eatrn00667paju2gwqwum"}
           config={{
             appearance: {
               theme: "dark",

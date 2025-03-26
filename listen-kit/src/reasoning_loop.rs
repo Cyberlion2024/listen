@@ -14,6 +14,8 @@ use serde::Serialize;
 use std::io::Write;
 use std::sync::Arc;
 use tokio::sync::mpsc::Sender;
+use uuid;
+use serde_json;
 
 #[derive(Serialize, Debug, Deserialize)]
 #[serde(tag = "type", content = "content")]
@@ -231,5 +233,29 @@ impl ReasoningLoop {
     pub fn with_stdout(mut self, enabled: bool) -> Self {
         self.stdout = enabled;
         self
+    }
+}
+
+/// Handles analysis of a topic via LunarCrush
+/// Returns a tool call result with LunarCrush analysis
+pub async fn handle_lunarcrush_analysis(
+    lunarcrush_api: Arc<crate::lunarcrush::LunarCrushApi>,
+    topic: &str,
+) -> Result<StreamResponse> {
+    match lunarcrush_api.research_topic(topic).await {
+        Ok(response) => {
+            Ok(StreamResponse::ToolResult {
+                id: uuid::Uuid::new_v4().to_string(),
+                name: "LUNARCRUSH_ANALYSIS".to_string(),
+                result: serde_json::to_string(&response).unwrap_or_default(),
+            })
+        }
+        Err(e) => {
+            tracing::error!("Error in LunarCrush analysis: {}", e);
+            Ok(StreamResponse::Error(format!(
+                "Failed to analyze topic with LunarCrush: {}",
+                e
+            )))
+        }
     }
 }

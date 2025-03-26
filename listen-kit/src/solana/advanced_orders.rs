@@ -139,7 +139,7 @@ mod tests {
                 .to_string(),
             condition: "PriceBelow".to_string(),
             price: 0.00019,
-            user_id: "did:privy:cm6cxky3i00ondmuatkemmffm".to_string(),
+            user_id: "did:privy:cm89eatrn00667paju2gwqwum".to_string(),
         };
         let id = submit_order_internal(&order).await.unwrap();
         println!("{}", id);

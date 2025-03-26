@@ -304,7 +304,7 @@ mod tests {
                 };
 
                 privy::tx::PrivyTransaction {
-                    user_id: "did:privy:cm6cxky3i00ondmuatkemmffm".to_string(),
+                    user_id: "did:privy:cm89eatrn00667paju2gwqwum".to_string(),
                     address: TEST_ADDRESS_SOL.to_string(),
                     from_chain_caip2: swap_order.from_chain_caip2.clone(),
                     to_chain_caip2: swap_order.to_chain_caip2.clone(),
@@ -315,7 +315,7 @@ mod tests {
             SwapOrderTransaction::Evm(transaction) => {
                 tracing::info!("EVM transaction: {:#?}", transaction);
                 privy::tx::PrivyTransaction {
-                    user_id: "did:privy:cm6cxky3i00ondmuatkemmffm".to_string(),
+                    user_id: "did:privy:cm89eatrn00667paju2gwqwum".to_string(),
                     address: TEST_ADDRESS_EVM.to_string(),
                     from_chain_caip2: swap_order.from_chain_caip2.clone(),
                     to_chain_caip2: swap_order.to_chain_caip2.clone(),

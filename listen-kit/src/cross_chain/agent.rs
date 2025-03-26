@@ -7,6 +7,7 @@ use crate::{
     cross_chain::tools::{ApproveToken, CheckApproval, GetQuote, Swap},
     data::{FetchPriceActionAnalysis, FetchTopTokens},
     dexscreener::tools::SearchOnDexScreener,
+    lunarcrush::AnalyzeTopic,
 };
 
 pub async fn create_cross_chain_agent(
@@ -24,6 +25,7 @@ pub async fn create_cross_chain_agent(
         .tool(ApproveToken)
         .tool(CheckApproval)
         .tool(FetchPriceActionAnalysis)
-        .tool(FetchTopTokens);
+        .tool(FetchTopTokens)
+        .tool(AnalyzeTopic);
     Ok(agent_builder.build())
 }

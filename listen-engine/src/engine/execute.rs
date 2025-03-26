@@ -156,7 +156,7 @@ mod tests {
     // TODO works but doesnt go through fully
     async fn test_tx_with_approvals() {
         let privy_tx = PrivyTransaction {
-            user_id: "did:privy:cm6cxky3i00ondmuatkemmffm".to_string(),
+            user_id: "did:privy:cm89eatrn00667paju2gwqwum".to_string(),
             address: "0xCCC48877a33a2C14e40c82da843Cf4c607ABF770".to_string(),
             from_chain_caip2: "eip155:42161".to_string(),
             to_chain_caip2: "eip155:8453".to_string(),

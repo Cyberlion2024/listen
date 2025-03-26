@@ -13,7 +13,7 @@ async function fetchAllWallets() {
 
   while (hasMoreData) {
     // Construct URL with cursor if available
-    const url: string = `https://dashboard.privy.io/api/v1/apps/cm6c7ifqd00ar52m1qxfgbkkn/wallets?limit=41${
+    const url: string = `https://dashboard.privy.io/api/v1/apps/cm89eatrn00667paju2gwqwum/wallets?limit=41${
       cursor ? `&cursor=${cursor}` : ""
     }`;
 
@@ -36,7 +36,7 @@ async function fetchAllWallets() {
         "sec-fetch-site": "same-origin",
       },
       referrer:
-        "https://dashboard.privy.io/apps/cm6c7ifqd00ar52m1qxfgbkkn/wallets?wallet-tab=transactions",
+        "https://dashboard.privy.io/apps/cm89eatrn00667paju2gwqwum/wallets?wallet-tab=transactions",
       referrerPolicy: "strict-origin-when-cross-origin",
       body: null,
       method: "GET",

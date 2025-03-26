@@ -7,6 +7,7 @@ use super::tools::{
     TransferErc20, TransferEth, VerifySwapRouterHasAllowance, WalletAddress,
 };
 use crate::common::{claude_agent_builder, PREAMBLE_COMMON};
+use crate::lunarcrush::AnalyzeTopic;
 
 pub async fn create_evm_agent(
     preamble: Option<String>,
@@ -25,5 +26,6 @@ pub async fn create_evm_agent(
         .tool(GetErc20Balance)
         .tool(ApproveTokenForRouterSpend)
         .tool(VerifySwapRouterHasAllowance)
+        .tool(AnalyzeTopic)
         .build())
 }

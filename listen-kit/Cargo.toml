@@ -56,8 +56,10 @@ serde_with = "3.12.0"
 async-trait = "0.1.85"
 ctor = "0.2.0"
 futures-util = { version = "0.3" }
+uuid = { version = "1.6.1", features = ["v4"] }
 lifi = { path = "../lifi" }
 listen-tracing = { path = "../listen-tracing" }
+petgraph = "0.6.4"
 # TODO this brings solana sdk dependency, worth trying to go to non-native blockahsh
 # injection, otherwise this is required for privy + lifi
 blockhash-cache = { path = "../blockhash-cache" }
