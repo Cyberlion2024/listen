@@ -1,8 +1,0 @@
-clickhouse
-redis
-.DS_Store
-.vscode
-target
-.env
-dump.rdb
-scripts
