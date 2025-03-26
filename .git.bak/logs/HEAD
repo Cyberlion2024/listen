@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 d49522ae7670ec7fd2a88343f2db5f61631b617f Cyberlion2024 <systemadm.verona@gmail.com> 1742966804 +0100	commit (initial): Initial commit
+d49522ae7670ec7fd2a88343f2db5f61631b617f d49522ae7670ec7fd2a88343f2db5f61631b617f Cyberlion2024 <systemadm.verona@gmail.com> 1742966931 +0100	checkout: moving from master to fix/remove-api-key
+d49522ae7670ec7fd2a88343f2db5f61631b617f 29a2d90add9bf7bff43f9589c82a4b5f3138e36c Cyberlion2024 <systemadm.verona@gmail.com> 1742967071 +0100	commit: Update listen-kit/.env.example file
+29a2d90add9bf7bff43f9589c82a4b5f3138e36c 042f76e69cc72eccbc10dcf7dc61b79304ad2413 Cyberlion2024 <systemadm.verona@gmail.com> 1742967210 +0100	commit: Revert "Initial commit"

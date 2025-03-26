@@ -1,0 +1,16 @@
+services:
+  listen-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 6969:6969
+    volumes:
+      - ./.env:/.env
+    command: ["./listen", "listen-service"]
+
+  listen-dashboard:
+    build:
+      context: ../dashboard
+    ports:
+      - 4173:4173
