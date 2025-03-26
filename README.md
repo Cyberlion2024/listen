@@ -84,7 +84,7 @@ graph TB
   - Calculate wallet concentration risk metrics (Gini Index, centralization scores)
   - Identify connected wallet clusters that might indicate potential manipulation
   - Analyze whale wallet distributions and movements
-- 🌍 Full multilingual support (English, Italian, Arabic, Chinese)
+- 🌍 Full multilingual support (English, Italian, Arabic, Chinese) - IN PROGRESS
 
 And more!
 
