@@ -76,6 +76,15 @@ graph TB
 - 📊 Price tracking and metrics
 - 🧰 Token management utilities
 - 📈 Performance monitoring with Prometheus integration
+- 🌐 Social sentiment analysis via LunarCrush integration
+  - Track social sentiment and engagement across platforms (Twitter/X, Reddit, YouTube, TikTok)
+  - Identify key influencers and trending content for any token
+  - Monitor social metrics like volume, engagement, and sentiment
+- 💰 Token holder distribution analysis with Faster100x
+  - Calculate wallet concentration risk metrics (Gini Index, centralization scores)
+  - Identify connected wallet clusters that might indicate potential manipulation
+  - Analyze whale wallet distributions and movements
+- 🌍 Full multilingual support (English, Italian, Arabic, Chinese)
 
 And more!
 
